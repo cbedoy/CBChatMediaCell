@@ -1,37 +1,72 @@
 package cbedoy.cbchatmediacell;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+import cbedoy.cbchatmediacell.models.Message;
+
+public class MainActivity extends Activity {
+
+    private ListView listView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.chat_view_controller);
+
+        ChatMessageCell chatMessageCell = new ChatMessageCell(createFakeInformation());
+
+        listView = (ListView) findViewById(R.id.chat_list_view);
+
+        listView.setAdapter(chatMessageCell);
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+    private List<Message> createFakeInformation()
+    {
+        List<Message> list = new ArrayList<>();
+        Message message;
+        message = new Message();
+        message.setDate("One day ago");
+        message.setMessage(getString(R.string.LoremTextSmall));
+        message.setNickname("Paulina Robledo");
+        message.setResource(R.drawable.avatar_3);
+        list.add(message);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        message = new Message();
+        message.setDate("Two days ago");
+        message.setMessage(getString(R.string.LoremTextMedium));
+        message.setNickname("Nata Romo");
+        message.setResource(R.drawable.avatar_2);
+        list.add(message);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        message = new Message();
+        message.setDate("15 minutes ago");
+        message.setMessage(getString(R.string.LoremTextBig));
+        message.setNickname("David Israel");
+        message.setResource(R.drawable.avatar_5);
+        list.add(message);
 
-        return super.onOptionsItemSelected(item);
+        message = new Message();
+        message.setDate("11 minutes ago");
+        message.setMessage(getString(R.string.LoremTextMedium));
+        message.setNickname("Alejandra Oregel");
+        message.setResource(R.drawable.avatar_4);
+        list.add(message);
+
+        message = new Message();
+        message.setDate("Just now");
+        message.setMessage(getString(R.string.LoremTextBig));
+        message.setNickname("Priscila Aguilar");
+        message.setResource(R.drawable.avatar_1);
+        list.add(message);
+
+        return list;
     }
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_margin="16dp"
+        android:src="@drawable/avatar_3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/chat_avatar_view" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paulina Robledo"
+        android:textSize="13sp"
+        android:id="@+id/chat_nickname_view"
+        android:textColor="#000000"
+        android:alpha="0.87"
+        android:layout_alignTop="@+id/chat_avatar_view"
+        android:layout_toRightOf="@+id/chat_avatar_view"
+        android:layout_toEndOf="@+id/chat_avatar_view" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18 days ago"
+        android:id="@+id/chat_date_view"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:layout_marginRight="16dp"
+        android:alpha="0.38"
+        android:layout_alignTop="@+id/chat_nickname_view"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/LoremTextMedium"
+        android:id="@+id/chat_message_view"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:alpha="0.54"
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/chat_nickname_view"
+        android:layout_alignRight="@+id/chat_date_view"
+        android:layout_alignEnd="@+id/chat_date_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
