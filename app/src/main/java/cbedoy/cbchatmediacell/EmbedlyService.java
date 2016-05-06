@@ -6,6 +6,8 @@ import com.embedly.api.Api;
 
 import java.util.HashMap;
 
+import cbedoy.cbchatmediacell.models.Metadata;
+
 /**
  * Created by bedoy on 5/5/16.
  */
@@ -28,7 +30,9 @@ public class EmbedlyService
         restService.setCallback(new IEmbedlyCallback() {
             @Override
             public void onSuccess(HashMap<String, Object> response) {
-                response.size();
+
+                Metadata metadata = new Metadata();
+
             }
 
             @Override
