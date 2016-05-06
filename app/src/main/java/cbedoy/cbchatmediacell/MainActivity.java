@@ -26,6 +26,10 @@ public class MainActivity extends Activity {
 
         listView.setAdapter(chatMessageCell);
 
+        EmbedlyService.init();
+
+        EmbedlyService.scrappingWithUrl("https://www.facebook.com/");
+
     }
 
     private List<Message> createFakeInformation()
